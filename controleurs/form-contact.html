@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulaire</title>
+
+    <link rel="stylesheet" href="yarn-assets/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container-fluid">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">Formulaire de contact</h1>
+
+            <form method="POST" action="traitement_form_contact.php">
+
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                </div>
+
+                <div class="form-check mb-2">
+                    <input type="checkbox" name="optin" id="optin" class="form-check-input">
+                    <label for="optin" class="form-check-label">J'accepte des offres commerciales</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="java" name="skill[]" value="java" class="form-check-input">
+                    <label for="java" class="form-check-label">Java</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="php" name="skill[]" value="php" class="form-check-input">
+                    <label for="php" class="form-check-label">PHP</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="python" name="skill[]" value="python" class="form-check-input">
+                    <label for="python" class="form-check-label">Python</label>
+                </div>
+
+                <button class="btn btn-primary btn-block" type="submit">Envoyer</button>
+
+
+
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
