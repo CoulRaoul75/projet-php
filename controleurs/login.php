@@ -8,7 +8,7 @@ $isPosted = filter_has_var(INPUT_POST, "submit");
 // initialisation du tableau des erreurs
 $errors = [];
 
-// initialisation de l'email
+// initialisation des variables
 $email = "";
 
 if ($isPosted) {

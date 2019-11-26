@@ -8,6 +8,9 @@ define("ROOT_PATH", dirname(__DIR__));
 define("VIEW_PATH", ROOT_PATH ."/vues");
 define("CONTROLLER_PATH", ROOT_PATH ."/controleurs");
 
+// inclusion des bibliothèques
+require ROOT_PATH . "/lib/database.php";
+
 // possible aussi de créer le chemin vers la BD
 
 // récup de la route passée en paramètre 
@@ -16,14 +19,17 @@ $route = filter_input(INPUT_GET, "route") ?? "defaut";
 
 // tableau de routage
 $routes = [
-    "test"          => "controleur.php",
-    "contact"       => "form-contact.html",
-    "login"         => "login.php",
-    "logout"        => "logout.php",
-    "produit"       => "produit.php",
-    "intro"         => "intro.php",
-    "ta-tronche"    => "upload.php",
-    "person"        => "persons.php"
+    "test"              => "controleur.php",
+    "contact"           => "form-contact.html",
+    "login"             => "login.php",
+    "logout"            => "logout.php",
+    "produit"           => "produit.php",
+    "intro"             => "intro.php",
+    "ta-tronche"        => "upload.php",
+    "person"            => "persons.php",
+    "contact-list"      => "contacts.php",
+    "ajout-contact"     => "form-contacts-ajout.php",
+    "supprimer"         => "contactDelete.php"
 ];
 
 // condition avec variable controleur pour chemin ok et erreur 404
@@ -35,7 +41,8 @@ if(array_key_exists($route, $routes)){
 }
 
 // test de l'authentification
-$publicRoutes = ["login", "produit", "404"];
+// pages publiques : mettre les exceptions
+$publicRoutes = ["login", "produit", "404", "contact-list", "ajout-contact"];
 // si la route n'est pas publique
 if (! in_array($route, $publicRoutes)){
     if(isset($_SESSION["email"])){
